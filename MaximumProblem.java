@@ -27,6 +27,20 @@ public class MaximumProblem {
         System.out.println("Maximum number for float is: " + maximumNumber);
 
     }
+    public static void findMax(String string1, String string2, String string3) {
+        String maximumNumber;
+
+        if (string1.compareTo(string2) > 0 && string1.compareTo(string3) > 0) {
+            maximumNumber = string1;
+        } else if (string2.compareTo(string1) > 0 && string2.compareTo(string3) > 0) {
+            maximumNumber = string2;
+        } else {
+            maximumNumber = string3;
+        }
+        System.out.println("Maximum String is : " + maximumNumber);
+
+    }
+
 
     public static void main(String[] args) {
         Integer number1 = 20, number2 = 25, number3 = 10;
@@ -35,6 +49,8 @@ public class MaximumProblem {
         Float firstnumber1 = 20.5f, secondnumber2 = 25.6f, thirdnumber3 = 100.4f;
         findMax(firstnumber1, secondnumber2, thirdnumber3);
 
+        String string1 = "Apple", string2 = "Peach", string3 = "Banana";
+        findMax(string1, string2, string3);
 
     }
 }
