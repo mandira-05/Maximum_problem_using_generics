@@ -1,5 +1,17 @@
 
-public class MaximumProblem {
+public class MaximumProblem<T extends Comparable<T>> {
+
+    T toCompare1, toCompare2, toCompare3;
+
+    public MaximumProblem(T tocompare1, T tocompare2, T tocompare3) {
+        this.toCompare1=tocompare1;
+        this.toCompare2=tocompare2;
+        this.toCompare3=tocompare3;
+    }
+
+    public void testMaximum() {
+        MaximumProblem.findMax(this.toCompare1,this.toCompare2,this.toCompare3);
+    }
 
     public static <T extends Comparable<T>> T findMax(T number1, T number2, T number3) {
         T maximumNumber;
@@ -15,14 +27,15 @@ public class MaximumProblem {
         return maximumNumber;
     }
     public static void main(String[] args) {
+
         Integer number1 = 20, number2 = 25, number3 = 10;
-        findMax(number1, number2, number3);
-
         Float firstnumber1 = 20.5f, secondnumber2 = 25.6f, thirdnumber3 = 100.4f;
-        findMax(firstnumber1, secondnumber2, thirdnumber3);
-
         String string1 = "Apple", string2 = "Peach", string3 = "Banana";
-        findMax(string1, string2, string3);
+
+
+        new MaximumProblem<Integer>(number1, number2 , number3).testMaximum();
+        new MaximumProblem<Float>(firstnumber1,secondnumber2,thirdnumber3).testMaximum();
+        new MaximumProblem<String>(string1, string2, string3).testMaximum();
 
     }
 }
